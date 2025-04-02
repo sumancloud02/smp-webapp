@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.learning</groupId>
   <artifactId>sample-webapp2</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <packaging>war</packaging>
   <name>Test-WebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -21,7 +21,20 @@
 		<version>1.6.2</version>
 	</dependency>
   </dependencies>
-<!--  <build>
-    <finalName>Test-WebApp</finalName>
-  </build> -->
+    <build>
+        <plugins>
+            <plugin>
+              <groupId>org.owasp</groupId>
+              <artifactId>dependency-check-maven</artifactId>
+			  <version>12.1.0</version>
+              <executions>
+                  <execution>
+                      <goals>
+                          <goal>check</goal>
+                      </goals>
+                  </execution>
+              </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
